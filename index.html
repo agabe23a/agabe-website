@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agabe Ngeywo's Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+    body.dark {
+      background: #1e1e1e;
+      color: #fff;
+    }
+    .header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .navbar a, #modeToggle {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .navbar a:hover, #modeToggle:hover {
+      text-decoration: underline;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+    }
+    body.dark .section { background: #2a2a2a; }
+    .portfolio-grid, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .portfolio-item, .gallery img {
+      flex: 1 1 30%;
+      padding: 1rem;
+      background: #eee;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .gallery img {
+      width: 100%;
+      cursor: pointer;
+    }
+    .gallery img:hover, .portfolio-item:hover {
+      transform: scale(1.03);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form input[type="submit"] {
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    form input[type="submit"]:hover {
+      background: #555;
+    }
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .footer .social-icons a {
+      margin: 0 0.5rem;
+      color: white;
+      font-size: 1.2rem;
+    }
+    #backToTop {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      background: #444;
+      color: white;
+    }
+    .typing {
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .portfolio-item, .gallery img { flex: 1 1 100%; }
+      .navbar { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .header { padding: 0.5rem; font-size: 1.1rem; }
+      .navbar { flex-direction: column; gap: 0.5rem; }
+      .navbar a, #modeToggle { font-size: 1.1rem; padding: 0.75rem 0.5rem; }
+      .section { padding: 0.5rem; margin: 1rem 0.2rem; font-size: 1rem; }
+      h1, h2, h3 { font-size: 1.2rem; }
+      .portfolio-item, .gallery img { flex: 1 1 100%; padding: 0.5rem; font-size: 1rem; }
+      .gallery img { min-width: 0; }
+      form input, form textarea { padding: 0.5rem; font-size: 1rem; }
+      .footer { padding: 1rem 0.2rem; font-size: 0.95rem; }
+      #backToTop { padding: 0.4rem 0.8rem; font-size: 1rem; }
+      .typing { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="typing">Hi, I'm Agabe</h1>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="#resume">Resume</a>
+      <a href="#blog">Blog</a>
+      <a href="#gallery">Gallery</a>
+      <button id="modeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section fade-in">
+      <h2>About Me</h2>
+      <p>Hi! I’m Agabe Ngeywo-a creative professional specializing in Graphic design, Content Writing, and Web Development. I help brands and individuals communicate their ideas through clean design, engaging content, and functional websites. Welcome to my digital Portfolio!.</p>
+    </section>
+
+    <section id="portfolio" class="section fade-in">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="design">Project A - Design</div>
+        <div class="portfolio-item" data-category="web">Project B - Web</div>
+        <div class="portfolio-item" data-category="writing">Project C - Writing</div>
+      </div>
+    </section>
+
+    <section id="services" class="section fade-in">
+      <h2>Services</h2>
+      <ul>
+        <li>Graphic Design</li>
+        <li>Content Writing</li>
+        <li>Web Development</li>
+        <li>Social Media Design</li>
+        <li>Blog Editing & SEO</li>
+        <li>Brand Identity Design</li>
+      </ul>
+    </section>
+
+    <section id="testimonials" class="section fade-in">
+      <h2>Testimonials</h2>
+      <div class="carousel">
+        <p>"Excellent service and results!" – Client A</p>
+        <p>"Very professional and creative." – Client B</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message">
+      </form>
+    </section>
+
+    <section id="resume" class="section fade-in">
+      <h2>Resume</h2>
+      <p>Embed your resume here or <a href="resume.pdf" download>download PDF</a></p>
+    </section>
+
+    <section id="blog" class="section fade-in">
+      <h2>Blog & Articles</h2>
+      <input type="text" id="searchBar" placeholder="Search posts...">
+      <article class="blog-post">
+        <h3>First Post</h3>
+        <p class="meta">Jan 1, 2025 | Tags: Web, Tips</p>
+        <p>This is a preview of the first blog post. <span class="read-more">Read more...</span></p>
+      </article>
+    </section>
+
+    <section id="gallery" class="section fade-in">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Gallery 1" class="lightbox">
+        <img src="https://via.placeholder.com/300" alt="Gallery 2" class="lightbox">
+        <img src="https://via.placeholder.com/300" alt="Gallery 3" class="lightbox">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://facebook.com/agabengeywo"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/agabe2050"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/+254758411725"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:agabe4013@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 Agabe</p>
+    <button id="backToTop">⬆</button>
+  </footer>
+
+  <script>
+    // DARK MODE TOGGLE
+    document.getElementById("modeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const icon = document.getElementById("modeToggle");
+      icon.textContent = document.body.classList.contains("dark") ? "☀" : "🌙";
+    });
+
+    // TYPING EFFECT
+    const typingText = document.querySelector(".typing");
+    const fullText = typingText.textContent;
+    typingText.textContent = "";
+    let i = 0;
+    function typeEffect() {
+      if (i < fullText.length) {
+        typingText.textContent += fullText.charAt(i);
+        i++;
+        setTimeout(typeEffect, 70);
+      }
+    }
+    typeEffect();
+
+    // SCROLL FADE-IN
+    const faders = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+    faders.forEach(el => observer.observe(el));
+
+    // BACK TO TOP BUTTON
+    document.getElementById("backToTop").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // LIGHTBOX
+    document.querySelectorAll(".lightbox").forEach(img => {
+      img.addEventListener("click", () => {
+        const modal = document.createElement("div");
+        modal.style.position = "fixed";
+        modal.style.top = 0;
+        modal.style.left = 0;
+        modal.style.width = "100vw";
+        modal.style.height = "100vh";
+        modal.style.background = "rgba(0,0,0,0.8)";
+        modal.style.display = "flex";
+        modal.style.justifyContent = "center";
+        modal.style.alignItems = "center";
+        modal.style.zIndex = 1000;
+
+        const largeImg = document.createElement("img");
+        largeImg.src = img.src;
+        largeImg.style.maxWidth = "90%";
+        largeImg.style.maxHeight = "90%";
+        largeImg.style.borderRadius = "10px";
+
+        modal.appendChild(largeImg);
+        document.body.appendChild(modal);
+        modal.addEventListener("click", () => document.body.removeChild(modal));
+      });
+    });
+
+    // BLOG SEARCH
+    const searchBar = document.getElementById("searchBar");
+    searchBar?.addEventListener("input", () => {
+      const keyword = searchBar.value.toLowerCase();
+      document.querySelectorAll(".blog-post").forEach(post => {
+        post.style.display = post.textContent.toLowerCase().includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
