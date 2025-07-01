@@ -152,7 +152,7 @@
 </head>
 <body>
   <header class="header">
-    <img src="images/agabe.jpg" alt="Agabe Ngeywo" class="profile-pic">
+    <img src="images/agabe.jpg" alt="Portrait of Agabe Ngeywo" class="profile-pic">
     <h1 class="typing">Hi, I'm Agabe</h1>
     <nav class="navbar">
       <a href="#home">Home</a>
@@ -213,6 +213,33 @@
   <p id="successMessage" style="display:none; color: green; margin-top: 1rem;">
     ✅ Thank you! Your message has been sent.
   </p>
+      // FORMSPREE FORM HANDLER
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // Stop default form submission
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("successMessage").style.display = "block";
+      form.reset(); // clear form fields
+      // Optional: hide message after 5 seconds
+      setTimeout(() => {
+        document.getElementById("successMessage").style.display = "none";
+      }, 5000);
+    } else {
+      alert("❌ Something went wrong. Please try again.");
+    }
+  });
+});
+
 </section>
 
     <section id="blog" class="section fade-in">
@@ -231,6 +258,7 @@
       <img src="images/project1.jpg" alt="My Design 1" class="lightbox">
       <img src="images/project2.jpg" alt="My Design 2" class="lightbox">
       <img src="images/project3.jpg" alt="My Design 3" class="lightbox">
+      </div>
     </section>
   </main>
 
