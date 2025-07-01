@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Agabe Ngeywo" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Agabe Ngeywo | Designer, Writer & Web Developer" />
+<meta property="og:description" content="Explore Agabe's portfolio in design, content, and development." />
+<meta property="og:image" content="https://yourdomain.com/images/agabe.jpg" />
+<meta property="og:url" content="https://yourdomain.com" />
+<meta name="twitter:card" content="summary_large_image" />
+  
   <title>Agabe Ngeywo's Website</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="images/agabe.jpg" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
@@ -141,6 +152,7 @@
 </head>
 <body>
   <header class="header">
+    <img src="images/agabe.jpg" alt="Agabe Ngeywo" class="profile-pic">
     <h1 class="typing">Hi, I'm Agabe</h1>
     <nav class="navbar">
       <a href="#home">Home</a>
@@ -148,7 +160,6 @@
       <a href="#services">Services</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <a href="#resume">Resume</a>
       <a href="#blog">Blog</a>
       <a href="#gallery">Gallery</a>
       <button id="modeToggle">🌙</button>
@@ -170,16 +181,16 @@
       </div>
     </section>
 
-    <section id="services" class="section fade-in">
-      <h2>Services</h2>
-      <ul>
-        <li>Graphic Design</li>
-        <li>Content Writing</li>
-        <li>Web Development</li>
-        <li>Social Media Design</li>
-        <li>Blog Editing & SEO</li>
-        <li>Brand Identity Design</li>
-      </ul>
+   <section id="services" class="section fade-in">
+  <h2>Services</h2>
+  <ul>
+    <li>🎨 Graphic Design</li>
+    <li>🖋️ Content Writing</li>
+    <li>💻 Web Development</li>
+    <li>📱 Social Media Design</li>
+    <li>🔍 Blog Editing & SEO</li>
+    <li>🆔 Brand Identity Design</li>
+    </ul>
     </section>
 
     <section id="testimonials" class="section fade-in">
@@ -191,19 +202,18 @@
     </section>
 
     <section id="contact" class="section fade-in">
-      <h2>Contact Me</h2>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message">
-      </form>
-    </section>
-
-    <section id="resume" class="section fade-in">
-      <h2>Resume</h2>
-      <p>Embed your resume here or <a href="resume.pdf" download>download PDF</a></p>
-    </section>
+  <h2>📬 Contact Me</h2>
+  <form id="contactForm" action="https://formspree.io/f/mdkzbvgj" method="POST">
+    <input type="text" name="name" placeholder="👤 Your Name" required>
+    <input type="email" name="email" placeholder="📧 Your Email" required>
+    <textarea name="message" placeholder="💬 Your Message" required></textarea>
+    <input type="submit" value="Send Message">
+    <p id="formStatus"></p>
+  </form>
+  <p id="successMessage" style="display:none; color: green; margin-top: 1rem;">
+    ✅ Thank you! Your message has been sent.
+  </p>
+</section>
 
     <section id="blog" class="section fade-in">
       <h2>Blog & Articles</h2>
@@ -218,22 +228,32 @@
     <section id="gallery" class="section fade-in">
       <h2>Gallery</h2>
       <div class="gallery">
-        <img src="https://via.placeholder.com/300" alt="Gallery 1" class="lightbox">
-        <img src="https://via.placeholder.com/300" alt="Gallery 2" class="lightbox">
-        <img src="https://via.placeholder.com/300" alt="Gallery 3" class="lightbox">
-      </div>
+      <img src="images/project1.jpg" alt="My Design 1" class="lightbox">
+      <img src="images/project2.jpg" alt="My Design 2" class="lightbox">
+      <img src="images/project3.jpg" alt="My Design 3" class="lightbox">
     </section>
   </main>
 
   <footer class="footer">
-    <div class="social-icons">
-      <a href="https://facebook.com/agabengeywo"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com/agabe2050"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/+254758411725"><i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:agabe4013@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>&copy; 2025 Agabe</p>
-    <button id="backToTop">⬆</button>
+  <h3>Let's Connect</h3>
+  <p>Feel free to reach out through any of my social platforms or email below:</p>
+
+  <div class="social-icons">
+    <a href="https://facebook.com/agabengeywo" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://instagram.com/agabe2050" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://wa.me/254758411725" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="mailto:agabe4013@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i> Email Me
+    </a>
+  </div>
+
+  <p>&copy; 2025 Agabe. All rights reserved.</p>
   </footer>
 
   <script>
