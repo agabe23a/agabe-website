@@ -193,6 +193,41 @@
             font-size: 1.5rem;
         }
 
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+        }
+
+        /* Social Proof Widget */
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .proof-item i {
+            color: gold;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -201,9 +236,17 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            background: linear-gradient(-45deg, #4361ee, #3a0ca3, #7209b7, #f72585);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             color: white;
             text-align: center;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-content {
@@ -308,6 +351,27 @@
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .service-card:hover::after {
+            width: 300px;
+            height: 300px;
+            top: -50px;
+            left: -50px;
         }
 
         .service-card:hover {
@@ -326,10 +390,19 @@
             margin: 0 auto 20px;
             color: var(--primary);
             font-size: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .service-card h3 {
             margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            position: relative;
+            z-index: 2;
         }
 
         /* Portfolio Section */
@@ -378,6 +451,253 @@
 
         .portfolio-item:hover .portfolio-img {
             transform: scale(1.1);
+        }
+
+        /* Progress Dashboard */
+        .progress-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .metric {
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Assessment Tools */
+        .assessment-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .assessment-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .assessment-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Client Portal */
+        .client-portal {
+            background: #f8f9fa;
+        }
+
+        .portal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .portal-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .portal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .portal-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Interactive Booking */
+        .interactive-booking {
+            background: white;
+        }
+
+        .booking-widget {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .time-slots h4 {
+            margin-bottom: 20px;
+        }
+
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .time-slot {
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .time-slot:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .time-slot.selected {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Payment Integration */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border: 2px solid var(--primary);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .pricing-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Video Testimonials */
+        .video-testimonials {
+            background: #f8f9fa;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-item h4 {
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 30px auto 0;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            border-radius: 0 30px 30px 0;
+            padding: 0 30px;
         }
 
         /* Testimonials */
@@ -703,6 +1023,106 @@
             transform: translateY(-5px);
         }
 
+        /* Live Chat Widget */
+        .chat-widget-floating {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-widget-floating.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-body {
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+        }
+
+        .chat-message.bot {
+            background: #f1f3f5;
+            align-self: flex-start;
+        }
+
+        .chat-message.user {
+            background: var(--primary);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+        }
 
         /* Footer */
         footer {
@@ -785,7 +1205,8 @@
         @media (max-width: 992px) {
             .about-content,
             .booking-content,
-            .contact-content {
+            .contact-content,
+            .booking-widget {
                 grid-template-columns: 1fr;
             }
 
@@ -805,6 +1226,10 @@
 
             .hero h1 {
                 font-size: 3rem;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
             }
         }
 
@@ -850,6 +1275,26 @@
             h2 {
                 font-size: 2rem;
             }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+            }
+
+            .chat-widget-floating {
+                width: 90%;
+                right: 5%;
+                bottom: 80px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -881,6 +1326,11 @@
             .hero h1 {
                 font-size: 2rem;
             }
+
+            .social-proof {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -897,15 +1347,29 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#client-portal">Client Portal</a></li>
                 <li><a href="#booking">Book Session</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
+            <div class="social-proof">
+                <div class="proof-item">
+                    <i class="fas fa-star"></i>
+                    <span>Rated 4.9/5 by 200+ clients</span>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-award"></i>
+                    <span>Certified Professional Coach</span>
+                </div>
+            </div>
             <h1>Transform Your Potential Into Success</h1>
             <p>Personalized coaching for creatives and professionals ready to elevate their career and life</p>
             <div class="hero-btns">
@@ -920,7 +1384,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image animate-on-scroll">
-                    <img src="https://github.com/agabe23a/agabe-website/blob/main/IMG_20250302_122129_192.jpg" alt="About Me">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Agabe Ngeywo">
                 </div>
                 <div class="about-text animate-on-scroll">
                     <h2>About Me</h2>
@@ -1027,6 +1491,224 @@
         </div>
     </section>
 
+    <!-- Progress Dashboard -->
+    <section class="section progress-dashboard">
+        <div class="container">
+            <div class="section-header light animate-on-scroll">
+                <h2>Client Success Metrics</h2>
+                <p>Real results from real clients - measurable impact that matters</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric animate-on-scroll">
+                    <div class="metric-value">94%</div>
+                    <div class="metric-label">Client Satisfaction Rate</div>
+                </div>
+                <div class="metric animate-on-scroll">
+                    <div class="metric-value">$2.3M+</div>
+                    <div class="metric-label">Client Revenue Growth</div>
+                </div>
+                <div class="metric animate-on-scroll">
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Careers Transformed</div>
+                </div>
+                <div class="metric animate-on-scroll">
+                    <div class="metric-value">10+</div>
+                    <div class="metric-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Tools -->
+    <section class="section assessment-tools">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Free Career Assessments</h2>
+                <p>Discover your strengths and opportunities with our free assessment tools</p>
+            </div>
+            
+            <div class="assessment-cards">
+                <div class="assessment-card animate-on-scroll">
+                    <h3>Career Readiness Quiz</h3>
+                    <p>5-minute assessment to evaluate your career preparedness</p>
+                    <button class="btn btn-outline">Start Quiz</button>
+                </div>
+                
+                <div class="assessment-card animate-on-scroll">
+                    <h3>Leadership Potential Test</h3>
+                    <p>10-minute assessment to uncover your leadership strengths</p>
+                    <button class="btn btn-outline">Start Test</button>
+                </div>
+                
+                <div class="assessment-card animate-on-scroll">
+                    <h3>Creative Block Assessment</h3>
+                    <p>Identify creative obstacles and get personalized solutions</p>
+                    <button class="btn btn-outline">Start Assessment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Portal -->
+    <section class="section client-portal" id="client-portal">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Client Portal</h2>
+                <p>Exclusive resources and tools for current clients</p>
+            </div>
+            
+            <div class="portal-features">
+                <div class="portal-card animate-on-scroll">
+                    <i class="fas fa-video"></i>
+                    <h3>Session Recordings</h3>
+                    <p>Access your coaching session recordings anytime</p>
+                </div>
+                
+                <div class="portal-card animate-on-scroll">
+                    <i class="fas fa-file-download"></i>
+                    <h3>Resources Library</h3>
+                    <p>Download worksheets, templates, and guides</p>
+                </div>
+                
+                <div class="portal-card animate-on-scroll">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your goals and milestones in real-time</p>
+                </div>
+                
+                <div class="portal-card animate-on-scroll">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Session Scheduling</h3>
+                    <p>Book and manage your coaching sessions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Booking -->
+    <section class="section interactive-booking">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Schedule Your Session</h2>
+                <p>Choose your preferred date and time instantly</p>
+            </div>
+            
+            <div class="booking-widget animate-on-scroll">
+                <div class="calendar-placeholder">
+                    <h4>Select a Date</h4>
+                    <p>Interactive calendar would be integrated here</p>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-calendar-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+                        <p>Calendar integration placeholder</p>
+                    </div>
+                </div>
+                
+                <div class="time-slots">
+                    <h4>Available Time Slots</h4>
+                    <div class="slots-grid">
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="time-slot">5:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Integration -->
+    <section class="section payment-options">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Coaching Packages</h2>
+                <p>Choose the package that best fits your needs and goals</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card animate-on-scroll">
+                    <h4>Discovery Session</h4>
+                    <div class="price">FREE</div>
+                    <ul>
+                        <li>30-minute consultation</li>
+                        <li>Goal assessment</li>
+                        <li>Personalized plan outline</li>
+                        <li>No obligation</li>
+                    </ul>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+                
+                <div class="pricing-card popular animate-on-scroll">
+                    <div class="popular-badge">Most Popular</div>
+                    <h4>3-Month Program</h4>
+                    <div class="price">$997</div>
+                    <ul>
+                        <li>12 coaching sessions</li>
+                        <li>Email support between sessions</li>
+                        <li>Resource library access</li>
+                        <li>Progress tracking dashboard</li>
+                    </ul>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                
+                <div class="pricing-card animate-on-scroll">
+                    <h4>6-Month Intensive</h4>
+                    <div class="price">$1,797</div>
+                    <ul>
+                        <li>24 coaching sessions</li>
+                        <li>Priority email & chat support</li>
+                        <li>Full resource library access</li>
+                        <li>Customized action plans</li>
+                    </ul>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="section video-testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Success Stories</h2>
+                <p>Watch clients share their transformation journeys</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-item animate-on-scroll">
+                    <div class="video-wrapper">
+                        <div style="background: #f8f9fa; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--primary);"></i>
+                        </div>
+                    </div>
+                    <h4>Sarah's Career Transition</h4>
+                </div>
+                
+                <div class="video-item animate-on-scroll">
+                    <div class="video-wrapper">
+                        <div style="background: #f8f9fa; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--primary);"></i>
+                        </div>
+                    </div>
+                    <h4>Michael's Business Growth</h4>
+                </div>
+                
+                <div class="video-item animate-on-scroll">
+                    <div class="video-wrapper">
+                        <div style="background: #f8f9fa; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--primary);"></i>
+                        </div>
+                    </div>
+                    <h4>David's Creative Breakthrough</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="section testimonials">
         <div class="container">
@@ -1085,6 +1767,20 @@
             <div class="testimonial-nav">
                 <button id="prevTestimonial"><i class="fas fa-arrow-left"></i></button>
                 <button id="nextTestimonial"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+        <div class="container">
+            <div class="newsletter-content animate-on-scroll">
+                <h2>Get Free Coaching Tips</h2>
+                <p>Weekly insights and strategies delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
@@ -1248,13 +1944,13 @@
                     
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#agabe2050"><i class="fab fa-instagram"></i></a>
-                        <a href="agabe17125"><i class="fab fa-twitter"></i></a>
-                        <a href="#agabengeywo"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/agabe2050" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/agabe17125" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com/agabengeywo" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                     
-                    <a href="https://wa.me/254758411725" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                    <a href="https://wa.me/254758411725" class="btn btn-primary" style="margin-top: 20px; display: inline-flex; align-items: center;">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Message on WhatsApp
                     </a>
                 </div>
                 
@@ -1299,7 +1995,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#client-portal">Client Portal</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1318,7 +2014,7 @@
                 <div class="footer-col">
                     <h4>Contact Info</h4>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> agabe4013@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> agabengeywo2025@gmail.com</li>
                         <li><i class="fas fa-phone"></i> +254 758 411 725</li>
                         <li><i class="fas fa-map-marker-alt"></i> Bungoma, Kenya</li>
                     </ul>
@@ -1330,6 +2026,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget-floating" id="chatWidget">
+        <div class="chat-header">
+            <span>Need help? Chat with us!</span>
+            <button id="closeChat">×</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                Hi there! 👋 How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="sendChat"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
 
     <script>
         // Mobile Navigation Toggle
@@ -1433,7 +2150,97 @@
                 header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
         });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Time Slot Selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Live Chat Widget
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWidget = document.getElementById('chatWidget');
+        const closeChat = document.getElementById('closeChat');
+        const sendChat = document.getElementById('sendChat');
+        const chatInput = document.getElementById('chatInput');
+        const chatBody = document.getElementById('chatBody');
+
+        chatToggle.addEventListener('click', () => {
+            chatWidget.classList.toggle('active');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatWidget.classList.remove('active');
+        });
+
+        sendChat.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user';
+                userMessage.textContent = message;
+                chatBody.appendChild(userMessage);
+                
+                // Clear input
+                chatInput.value = '';
+                
+                // Scroll to bottom
+                chatBody.scrollTop = chatBody.scrollHeight;
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'chat-message bot';
+                    botMessage.textContent = "Thanks for your message! I'll get back to you as soon as possible. In the meantime, feel free to explore my services or book a consultation.";
+                    chatBody.appendChild(botMessage);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        // Newsletter Form
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! You will receive our latest coaching tips soon.');
+            this.reset();
+        });
+
+        // Assessment Tool Buttons
+        document.querySelectorAll('.assessment-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('This assessment tool would open in a real implementation. For now, please contact me directly for personalized assessments.');
+            });
+        });
+
+        // Pricing Card Buttons
+        document.querySelectorAll('.pricing-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const plan = this.closest('.pricing-card').querySelector('h4').textContent;
+                alert(`Thank you for your interest in the ${plan}! I will contact you shortly to discuss next steps.`);
+            });
+        });
     </script>
 </body>
 </html>
-
