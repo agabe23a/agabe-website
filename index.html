@@ -1023,107 +1023,6 @@
             transform: translateY(-5px);
         }
 
-        /* Live Chat Widget */
-        .chat-widget-floating {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 350px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .chat-widget-floating.active {
-            display: flex;
-        }
-
-        .chat-header {
-            background: var(--primary);
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-body {
-            padding: 20px;
-            height: 300px;
-            overflow-y: auto;
-        }
-
-        .chat-message {
-            margin-bottom: 15px;
-            padding: 10px 15px;
-            border-radius: 18px;
-            max-width: 80%;
-        }
-
-        .chat-message.bot {
-            background: #f1f3f5;
-            align-self: flex-start;
-        }
-
-        .chat-message.user {
-            background: var(--primary);
-            color: white;
-            align-self: flex-end;
-            margin-left: auto;
-        }
-
-        .chat-input {
-            padding: 15px;
-            border-top: 1px solid #eee;
-            display: flex;
-        }
-
-        .chat-input input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            margin-right: 10px;
-        }
-
-        .chat-input button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-        }
-
-        .chat-toggle {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .chat-toggle:hover {
-            transform: scale(1.1);
-        }
-
         /* Footer */
         footer {
             background: var(--dark);
@@ -1289,12 +1188,6 @@
                 border-radius: 30px;
                 width: 100%;
             }
-
-            .chat-widget-floating {
-                width: 90%;
-                right: 5%;
-                bottom: 80px;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1384,7 +1277,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image animate-on-scroll">
-                    <img src="agabe.jpg">
+                    <img src="agabe.jpg" alt="Agabe Ngeywo">
                 </div>
                 <div class="about-text animate-on-scroll">
                     <h2>About Me</h2>
@@ -2027,27 +1920,6 @@
         </div>
     </footer>
 
-    <!-- Live Chat Widget -->
-    <div class="chat-widget-floating" id="chatWidget">
-        <div class="chat-header">
-            <span>Need help? Chat with us!</span>
-            <button id="closeChat">×</button>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="chat-message bot">
-                Hi there! 👋 How can I help you today?
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="chatInput" placeholder="Type your message...">
-            <button id="sendChat"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-
-    <button class="chat-toggle" id="chatToggle">
-        <i class="fas fa-comments"></i>
-    </button>
-
     <script>
         // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -2173,53 +2045,6 @@
             });
         });
 
-        // Live Chat Widget
-        const chatToggle = document.getElementById('chatToggle');
-        const chatWidget = document.getElementById('chatWidget');
-        const closeChat = document.getElementById('closeChat');
-        const sendChat = document.getElementById('sendChat');
-        const chatInput = document.getElementById('chatInput');
-        const chatBody = document.getElementById('chatBody');
-
-        chatToggle.addEventListener('click', () => {
-            chatWidget.classList.toggle('active');
-        });
-
-        closeChat.addEventListener('click', () => {
-            chatWidget.classList.remove('active');
-        });
-
-        sendChat.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-
-        function sendMessage() {
-            const message = chatInput.value.trim();
-            if (message) {
-                // Add user message
-                const userMessage = document.createElement('div');
-                userMessage.className = 'chat-message user';
-                userMessage.textContent = message;
-                chatBody.appendChild(userMessage);
-                
-                // Clear input
-                chatInput.value = '';
-                
-                // Scroll to bottom
-                chatBody.scrollTop = chatBody.scrollHeight;
-                
-                // Simulate bot response
-                setTimeout(() => {
-                    const botMessage = document.createElement('div');
-                    botMessage.className = 'chat-message bot';
-                    botMessage.textContent = "Thanks for your message! I'll get back to you as soon as possible. In the meantime, feel free to explore my services or book a consultation.";
-                    chatBody.appendChild(botMessage);
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                }, 1000);
-            }
-        }
-
         // Newsletter Form
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -2227,36 +2052,13 @@
             this.reset();
         });
 
-        // Assessment Tool Buttons
-        <form action="https://formspree.io/f/xaqdoqrg" method="POST" id="contact-form">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
+        // Assessment Tool Buttons (simple alerts)
+        document.querySelectorAll('.assessment-card .btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('This is a demo assessment. Full functionality would be integrated here.');
+            });
+        });
 
-<p id="form-status"></p>
-
-<script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      status.textContent = "Message sent successfully!";
-      form.reset();
-    } else {
-      status.textContent = "Oops! Something went wrong.";
-    }
-  });
         // Pricing Card Buttons
         document.querySelectorAll('.pricing-card .btn').forEach(button => {
             button.addEventListener('click', function() {
@@ -2267,6 +2069,3 @@
     </script>
 </body>
 </html>
-
-
-
